@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocampo's Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .light-mode {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .calculator {
+            border: 2px solid #892d2e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px #892d2e;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .dark-mode .calculator {
+            background-color: #444;
+            border-color: #892d2e;
+        }
+
+        #result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="light-mode">
+
+    <div class="calculator">
+        <h1>Ocampo's Activity: Add Two Numbers</h1>
+        
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number"><br><br>
+        <button onclick="addNumbers()">Add Numbers</button>
+
+        <div id="result"></div>
+
+        <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+    </div>
+
+    <script>
+        function addNumbers() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const sum = num1 + num2;
+            document.getElementById('result').innerText = 'Result: ' + sum;
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+
+</body>
+</html>
